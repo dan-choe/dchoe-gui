@@ -1,6 +1,9 @@
-<div class="row sidebar">
-  <div class="col-sm-3">
-  side
-
+<!-- <div class="row sidebar">
+  <div class="col-sm-12">
+    {{ sidebar }}
   </div>
-</div>
+</div> -->
+
+<span type="button" (click)="toggle()">{{ sidebar }}</span>
+
+<div class="example-sidenav-content" *ngIf="isOpen" [@slideInOut]>show/hide block</div>
