@@ -88,7 +88,7 @@ import { NavTreeComponent } from './nav-tree/nav-tree.component';
     MatTreeModule,
   ]
 })
-export class DemoMaterialModule {}
+export class MaterialModules {}
 
 @NgModule({
   declarations: [
@@ -96,15 +96,13 @@ export class DemoMaterialModule {}
     HeadComponent,
     FooterComponent,
     SidebarComponent,
-    NavTreeComponent,
     NavTreeComponent
   ],
   imports: [
     NgbModule.forRoot(),
     BrowserModule,
     BrowserAnimationsModule,
-    DemoMaterialModule
-    // MatNativeDataModule
+    MaterialModules
   ],
   providers: [],
   bootstrap: [AppComponent]

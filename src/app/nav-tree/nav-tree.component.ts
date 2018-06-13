@@ -26,48 +26,36 @@ export class FileFlatNode {
  */
 const TREE_DATA = `
   {
-    "Documents": {
-      "angular": {
-        "src": {
-          "core": "ts",
-          "compiler": "ts"
+    "Menu 1": {
+      "Sub 1-1": {
+        "Sub 1-1-1": {
+          "a": "a",
+          "b": "a"
         }
       },
-      "material2": {
-        "src": {
-          "button": "ts",
-          "checkbox": "ts",
-          "input": "ts"
+      "Sub 1-2": {
+        "Sub 1-2-1": {
+          "a": "a",
+          "b": "b",
+          "c": "c"
         }
       }
     },
-    "Downloads": {
-        "Tutorial": "html",
-        "November": "pdf",
-        "October": "pdf"
+    "Menu 2": {
+        "Sub 2-1": "a",
+        "Sub 2-2": "b",
+        "Sub 2-3": "c"
     },
-    "Pictures": {
-        "Sun": "png",
-        "Woods": "jpg",
-        "Photo Booth Library": {
-          "Contents": "dir",
-          "Pictures": "dir"
-        }
-    },
-    "Applications": {
-        "Chrome": "app",
-        "Calendar": "app",
-        "Webstorm": "app"
+    "Menu 3": {
+        "Sub 3-1": "a",
+        "Sub 3-2": "b",
+        "Sub 3-3": "c"
     }
-}`;
+  }`;
 
 
 /**
- * File database, it can build a tree structured Json object from string.
- * Each node in Json object represents a file or a directory. For a file, it has filename and type.
- * For a directory, it has filename and children (a list of files or directories).
- * The input will be a json object string, and the output is a list of `FileNode` with nested
- * structure.
+ * Build a tree structed JSON object from string.
  */
 @Injectable()
 export class FileDatabase {
@@ -118,7 +106,7 @@ export class FileDatabase {
   selector: 'app-nav-tree',
   templateUrl: './nav-tree.component.html',
   styleUrls: ['./nav-tree.component.css'],
-  providers: [FileDatabase]
+  providers: [ FileDatabase ]
 })
 export class NavTreeComponent {
 
