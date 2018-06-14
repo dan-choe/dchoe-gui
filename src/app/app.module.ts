@@ -7,6 +7,8 @@ import { HeadComponent } from './head/head.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { routing } from './app.routes';
+
 // import { MatNativeDataModule } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
 import {
@@ -98,13 +100,16 @@ export class MaterialModules {}
     ContentBodyComponent,
     FooterComponent,
     SidebarComponent,
-    NavTreeComponent
+    NavTreeComponent,
+    ComponentOne,
+    ComponentTwo
   ],
   imports: [
     NgbModule.forRoot(),
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModules
+    MaterialModules,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]
