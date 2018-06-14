@@ -1,12 +1,26 @@
-<!-- <div class="row sidebar">
-  <div class="col-sm-12">
-    {{ sidebar }}
-  </div>
-</div> -->
+<div class="row sidebar">
+    <div class="sidenav-static col-sm-3"> 
+      <div>
+        {{ sidebar }}
+        <span type="button" (click)="toggle()">{{ sidebar }}</span>
+      </div>
+      <app-nav-tree></app-nav-tree>
+    </div>
+    <!-- SHOW/HIDE SIDEBAR -->
+    <div class="example-sidenav-content col-sm-3" *ngIf="isOpen" [@slideInOut]>
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+      </ul>
+    </div>
 
-<span type="button" (click)="toggle()">{{ sidebar }}</span>
-
-<!-- SHOW/HIDE SIDEBAR -->
-<div class="example-sidenav-content" *ngIf="isOpen" [@slideInOut]>
-  <app-nav-tree></app-nav-tree>
+    <app-content-body></app-content-body>
 </div>

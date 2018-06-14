@@ -1,3 +1,6 @@
 .headbar {
   background-color: #ddd;
+  width:100%;
+  float:left;
+  position: relative;
 }

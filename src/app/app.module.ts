@@ -48,6 +48,7 @@ import {
 } from '@angular/material';
 
 import { NavTreeComponent } from './nav-tree/nav-tree.component';
+import { ContentBodyComponent } from './content-body/content-body.component';
 
 @NgModule({
   exports: [
@@ -94,6 +95,7 @@ export class MaterialModules {}
   declarations: [
     AppComponent,
     HeadComponent,
+    ContentBodyComponent,
     FooterComponent,
     SidebarComponent,
     NavTreeComponent

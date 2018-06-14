@@ -1,3 +1,6 @@
 .footer {
   background-color: #ee5;
+  width:100%;
+  float:left;
+  position: relative;
 }
