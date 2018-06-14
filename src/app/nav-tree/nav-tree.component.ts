@@ -59,6 +59,7 @@ const TREE_DATA = `
  */
 @Injectable()
 export class FileDatabase {
+  // Observer
   dataChange: BehaviorSubject<FileNode[]> = new BehaviorSubject<FileNode[]>([]);
 
   get data(): FileNode[] { return this.dataChange.value; }
@@ -71,11 +72,11 @@ export class FileDatabase {
     // Parse the string to json object.
     const dataObject = JSON.parse(TREE_DATA);
 
-    // Build the tree nodes from Json object. The result is a list of `FileNode` with nested
-    //     file node as children.
+    // Build the tree nodes from Json object. The result is a list of `FileNode` with nested file node as children.
     const data = this.buildFileTree(dataObject, 0);
 
     // Notify the change.
+    // Observer's next method. When you use next, you fire off an event that all subscribers will listen too
     this.dataChange.next(data);
   }
 
