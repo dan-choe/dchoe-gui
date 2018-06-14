@@ -1,4 +1,7 @@
-<div>Collapse All, Expand All</div>
+<div>
+    <button (click)="collapse()">Collapse All</button>
+    <button (click)="expand()">Expand All</button>
+</div>
 
 <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
   <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding>

@@ -6,4 +6,7 @@
 
 <span type="button" (click)="toggle()">{{ sidebar }}</span>
 
-<div class="example-sidenav-content" *ngIf="isOpen" [@slideInOut]>show/hide block</div>
+<!-- SHOW/HIDE SIDEBAR -->
+<div class="example-sidenav-content" *ngIf="isOpen" [@slideInOut]>
+  <app-nav-tree></app-nav-tree>
+</div>

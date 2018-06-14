@@ -118,8 +118,7 @@ export class NavTreeComponent {
   dataSource: MatTreeFlatDataSource<FileNode, FileFlatNode>;
 
   constructor(database: FileDatabase) {
-    this.treeFlattener = new MatTreeFlattener(this.transformer, this._getLevel,
-      this._isExpandable, this._getChildren);
+    this.treeFlattener = new MatTreeFlattener(this.transformer, this._getLevel, this._isExpandable, this._getChildren);
     this.treeControl = new FlatTreeControl<FileFlatNode>(this._getLevel, this._isExpandable);
     this.dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
 
@@ -136,6 +135,15 @@ export class NavTreeComponent {
     flatNode.expandable = !!node.children;
     return flatNode;
   }
+
+  collapse(){
+    return null;
+  }
+
+  expand(){
+    return null;
+  }
+
 
   private _getLevel = (node: FileFlatNode) => { return node.level; };
 
