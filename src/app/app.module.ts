@@ -5,6 +5,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HeadComponent } from './head/head.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule }   from '@angular/forms';
+import { HttpModule }    from '@angular/http';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { routing } from './app.routes';
@@ -109,7 +111,9 @@ export class MaterialModules {}
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModules,
-    routing
+    routing,
+    FormsModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
