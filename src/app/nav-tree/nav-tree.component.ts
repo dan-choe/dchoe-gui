@@ -2,11 +2,9 @@ import { Component, Injectable } from '@angular/core';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
 import { BehaviorSubject, Observable, of as observableOf } from 'rxjs';
+import { NodeNav } from './nodenav';
+import { NgForm } from '@angular/forms';
 
-/**
- * File node data with nested structure.
- * Each node has a filename, and a type or a list of children.
- */
 export class FileNode {
   children: FileNode[];
   filename: string;
@@ -109,7 +107,8 @@ export class FileDatabase {
   styleUrls: ['./nav-tree.component.css'],
   providers: [ FileDatabase ]
 })
-export class NavTreeComponent {
+export class NavTreeComponent 
+{
 
   treeControl: FlatTreeControl<FileFlatNode>;
 
@@ -142,6 +141,10 @@ export class NavTreeComponent {
 
   expand(){
     return null;
+  }
+
+  getNodeNavs(): void {
+
   }
 
 

@@ -12,7 +12,7 @@ import { trigger, transition, animate, style } from '@angular/animations';
         animate('200ms ease-in', style({transform: 'translateX(0%)'}))
       ]),
       transition(':leave', [
-        animate('200ms ease-in', style({transform: 'translateX(-100%)'}))
+        animate('100ms ease-in', style({transform: 'translateX(-100%)'}))
       ])
     ])
   ]

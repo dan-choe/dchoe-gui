@@ -6,10 +6,13 @@ import { AppComponent } from './app.component';
 import { HeadComponent } from './head/head.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule }   from '@angular/forms';
-import { HttpModule }    from '@angular/http';
+// import { HttpModule }    from '@angular/http'; deprecated. should use HttpClientModule instead
+import { HttpClientModule } from '@angular/common/http';
+
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { routing } from './app.routes';
+// import { routing } from './app.routes';
+import { NodeNavService } from './nav-tree/nodenav.service';
 
 // import { MatNativeDataModule } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
@@ -52,6 +55,7 @@ import {
 } from '@angular/material';
 
 import { NavTreeComponent } from './nav-tree/nav-tree.component';
+import { NodeNavComponent } from './nav-tree/nodeNav.component';
 import { ContentBodyComponent } from './content-body/content-body.component';
 
 @NgModule({
@@ -103,19 +107,21 @@ export class MaterialModules {}
     FooterComponent,
     SidebarComponent,
     NavTreeComponent,
-    ComponentOne,
-    ComponentTwo
+    NodeNavComponent
+    // ComponentOne,
+    // ComponentTwo
   ],
   imports: [
     NgbModule.forRoot(),
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModules,
-    routing,
+    // routing,
     FormsModule,
-    HttpModule
+    // HttpModule
+    HttpClientModule
   ],
-  providers: [],
+  providers: [NodeNavService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
