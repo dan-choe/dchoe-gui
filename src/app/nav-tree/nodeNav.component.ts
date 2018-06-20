@@ -17,6 +17,11 @@ export class NodeNavComponent implements OnInit
 {
     nodeNavs: NodeNav[];
     newNodeNav: NodeNav = new NodeNav();
+    editing: boolean = false;
+    editingNodeNav: NodeNav = new NodeNav();
+
+    temp: string;
+    numberOfNodes: number;
 
     constructor(private nodeNavService: NodeNavService) 
     {
@@ -41,6 +46,7 @@ export class NodeNavComponent implements OnInit
                 nodeNavForm.reset();
                 this.newNodeNav = new NodeNav();
                 this.nodeNavs.unshift(value);
+                this.getNodeNavs();
             });
     }
 
@@ -50,5 +56,22 @@ export class NodeNavComponent implements OnInit
             .then(() => {
                 this.nodeNavs = this.nodeNavs.filter(node => node.id != id);
             });
+    }
+
+    editNodeNav(theNode: NodeNav): void
+    {
+        this.nodeNavService.editNode(theNode)
+            .then(updatedNode => {
+                let existingNode = this.nodeNavs.find(node => node.id === theNode.id);
+                // +
+                Object.assign(existingNode, updatedNode);
+                this.clearEditing();
+            });
+    }
+
+    clearEditing(): void
+    {
+        this.editing = false;
+        this.editingNodeNav = new NodeNav();
     }
 }

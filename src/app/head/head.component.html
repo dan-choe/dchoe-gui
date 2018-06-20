@@ -5,4 +5,109 @@
   <div class="col-sm-3">
     {{ test }}
   </div>
+
+  <!-- 
+    As there is no navigation component you'd need to use a combination of the collapse functionality 
+  ng-bootstrap's ngbCollapse component as well as the dropdown functionality from the NgbDropdown component 
+  -->
+<!-- 
+  <nav class="navbar navbar-inverse navbar-dark bg-dark">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">NAME</a>
+          <button class="navbar-toggle hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item">A</li>
+              <li class="nav-item">B</li>
+              <li class="nav-item">C</li>
+          </ul>
+        </div>
+    </div>
+  </nav> -->
+
+
+  <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">NAME</a>
+          
+          <button class="navbar-toggle navbar-toggler hidden-sm-up" type="button"
+                aria-expanded="false" aria-controls="isNavbarCollapsed"
+                data-toggle="collapse" data-target="#isNavbarCollapsed" (click)="isNavbarCollapsed = !isNavbarCollapsed" >
+            
+          
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+        <div class="collapse navbar-collapse" [ngbCollapse]="isNavbarCollapsed">
+          <ul class="nav navbar-nav mr-auto">
+              <li class="nav-item">A</li>
+              <li class="nav-item">B</li>
+              <li class="nav-item">C</li>
+
+              <li class="nav-item dropdown" ngbDropdown>
+                  <a class="nav-link dropdown-toggle" id="id01" href="#" ngbDropdownToggle>Files</a>
+                  <div class="dropdown-menu" aria-labelledby="id01" ngbDropdownMenu>
+                    <a class="dropdown-item" href="#">HTML</a>
+                    <a class="dropdown-item" href="#">TS</a>
+                    <a class="dropdown-item" href="#">JS</a>
+                  </div>
+              </li>
+              
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+              <li class="nav-item">LOGIN</li>
+              <li class="nav-item">MY ACCOUNT</li>
+          </ul>
+        </div>
+    </div>
+  </nav>
+
+
+
+  <!-- <div class="row">
+    <div class="col-sm-12">2nd test</div>
+  </div>
+
+
+  <nav class="navbar navbar-inverse" ngbDropdown>
+      <div class="container-fluid container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">NAME</a>
+         
+          <button class="navbar-toggle navbar-toggler hidden-sm-up" type="button" id="id02" ngbDropdownToggle aria-expanded="false">
+        
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+        <div class="collapse navbar-collapse" aria-labelledby="id02" ngbDropdownMenu>
+          <ul class="nav navbar-nav mr-auto">
+              <li class="nav-item">A</li>
+              <li class="nav-item">B</li>
+              <li class="nav-item">C</li>        
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+              <li class="nav-item">LOGIN</li>
+              <li class="nav-item">MY ACCOUNT</li>
+          </ul>
+        </div>
+    </div>
+  </nav> -->
+
+
 </div>

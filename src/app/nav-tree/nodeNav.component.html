@@ -5,46 +5,42 @@
                required
                name="title" [(ngModel)]="newNodeNav.name"
                #title="ngModel" >
-
-        <!-- <div *ngIf="title.errors && title.dirty"
-             class="alert alert-danger">
-            <div [hidden]="!title.errors.required">
-              Title is required.
-            </div>
-        </div> -->
       </form>
     </div>
     
     <ul class="todo-list">
-      <li *ngFor="let nodeNav of nodeNavs" [class.completed]="todo.completed === true" >
+      <li *ngFor="let nodeNav of nodeNavs; let i = index"> 
         <div>
-            <span>
-              {{nodeNav.name}}
+            <span *ngIf="nodeNav">
+              ({{ i }}) : {{ nodeNav.name }}
             </span>
             <span class="todo-actions">
-                <!-- <a (click)="editTodo(todo)">
+                <a (click)="editNodeNav(nodeNav)">
                   <i class="material-icons edit">edit</i>
-                </a> -->
+                </a>
                 <a (click)="deleteNodeNav(nodeNav.id)">
                   <i class="material-icons delete">clear</i>
                 </a>
             </span>
         </div>
-        <!-- <div class="todo-edit" *ngIf="editing && editingTodo.id === todo.id">
+        <div class="todo-edit" *ngIf="editing && editingNodeNav.id === nodeNav.id">
             <input class="form-control" type="text" 
-             [(ngModel)]="editingTodo.title" required>
+             [(ngModel)]="editingNodeNav.name" required>
             <span class="edit-actions">
-                <a (click)="updateTodo(editingTodo)">
+                <a (click)="editNodeNav(editingNodeNav)">
                   <i class="material-icons">done</i>
                 </a>
                 <a (click)="clearEditing()">
                   <i class="material-icons">clear</i>
                 </a>
             </span>
-        </div> -->
+        </div>
       </li>
     </ul>
     <div class="no-todos" *ngIf="nodeNavs && nodeNavs.length == 0">
         <p>No Node-Navs Found!</p>
     </div>
 </div>
+
+<input type="text" id="temp" class="form-control" placeholder="enter..." [(ngModel)]="temp">
+{{ temp }}

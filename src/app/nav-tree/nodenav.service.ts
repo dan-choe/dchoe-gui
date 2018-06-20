@@ -39,6 +39,14 @@ export class NodeNavService
             .catch(this.handleError);
     }
 
+    editNode(theNode: NodeNav): Promise<NodeNav>
+    {
+        return this.http.put(this.baseUrl + '/' + theNode.id, theNode)
+            .toPromise()
+            .then(response => response as NodeNav)
+            .catch(this.handleError);
+    }
+
     private handleError(error: any): Promise<any>
     {
         console.error('Error occured', error);
