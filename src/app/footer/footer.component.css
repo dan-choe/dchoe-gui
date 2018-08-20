@@ -2,5 +2,6 @@
   background-color: #ee5;
   width:100%;
   float:left;
-  position: relative;
+  /* float:left; */
+  /* position: absolute; */
 }

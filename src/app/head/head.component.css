@@ -1,6 +1,20 @@
 .headbar {
-  background-color: #ddd;
   width:100%;
   float:left;
-  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 8px 16px;
+  /* float:left; */
+  /* position: absolute; */
+  z-index: 1;
+  background-color: #456FFF;
+  color: #fff;
+}
+
+.headbar a {
+  color: #fff;
+}
+.headbar_content {
+  
+  color: #fff;
 }
