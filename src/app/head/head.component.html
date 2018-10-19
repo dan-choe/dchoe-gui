@@ -1,42 +1,54 @@
 <div class="row headbar">
-  <!-- <div class="col-sm-12"> -->
+  <div class="col-sm-12">
+    <!--
+      without navbar-expand-lg, it shows navbar as mobile version
+    -->
 
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-fixed-top navbar-expand-md">
+      <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+          <mat-icon>menu</mat-icon>
+      </button>
 
-    <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
-        <mat-icon>menu</mat-icon>
-        <!-- <span class="navbar-toggler-icon"></span> -->
-    </button>
-
-    {{ title }}
+      <a class="navbar-brand">{{ title }}</a>
 
       <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
         <ul class="navbar-nav mr-auto">
+
           <li class="nav-item">
-            <a class="nav-link" href="#">Item 1</a>
+              <a class="nav-link" href="#">Projects</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">Notes</a>
           </li>
     
           <li class="nav-item">
-            <a class="nav-link" href="#">Item 2</a>
+            <a class="nav-link" href="#">About</a>
           </li>
 
-          <li>
-              <form class="form-inline my-2 my-lg-0">
-                  <input class="form-control mr-sm-2" type="search" placeholder="Search">
-                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
           </li>
-
         </ul>
-      </div>
-      
-      
 
+        <ul class="navbar-nav">       
+            <li>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </li>  
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">SNS</a>
+            </li>
+    
+            <li class="nav-item">
+              <a class="nav-link" href="#">Night Mode</a>
+            </li>
+        </ul>
+      </div>    
     </nav>
 
-
-  <!-- </div> -->
-  <!-- <div class="col-sm-3">
-    {{ test }}
-  </div> -->
+  </div> 
 </div>

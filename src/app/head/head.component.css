@@ -1,9 +1,9 @@
 .headbar {
   width:100%;
-  float:left;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 8px 16px;
+  /* float:left; */
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* padding: 8px 16px; */
   /* float:left; */
   /* position: absolute; */
   z-index: 1;
@@ -15,6 +15,9 @@
   color: #fff;
 }
 .headbar_content {
-  
+  color: #fff;
+}
+
+.navbar-toggler {
   color: #fff;
 }
